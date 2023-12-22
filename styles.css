@@ -31,6 +31,7 @@ body {
 
 .notesContainer {
     background-color: rgb(255, 255, 255); /* Change color back to rgb(255, 255, 255) */
+    border: 2px solid black;
 }
 
 .to-doContainer {
@@ -39,4 +40,11 @@ body {
 
 .notebox {
     background-color: rgb(255, 255, 255);
+}
+
+.addNote {
+    background-color: white;
+    height: 250px;
+    margin-top: 15px;
+    border: 2px solid black;
 }
