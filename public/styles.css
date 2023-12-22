@@ -40,11 +40,26 @@ body {
 
 .notebox {
     background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
 }
 
 .addNote {
-    background-color: white;
+    /* background-color: white; */
     height: 250px;
     margin-top: 15px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+}
+
+.titleInput {
+    height: 30px;
+    width: 30%;
+}
+
+.textInput {
+    margin-top: 5px;
+    height: 200px;
+    width: 90%;
 }
