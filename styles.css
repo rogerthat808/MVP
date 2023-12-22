@@ -1,0 +1,42 @@
+body {
+    background-color: #fff9db;
+}
+
+.titleBar {
+    background-color: #ffd8a8;
+    height: 70px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.username {
+    font-family: fantasy;
+    font-size: 50px;
+}
+
+.page {
+    height: 700px;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.notesContainer,
+.to-doContainer {
+    flex: 1;
+    height: 100%;
+}
+
+.notesContainer {
+    background-color: rgb(255, 255, 255); /* Change color back to rgb(255, 255, 255) */
+}
+
+.to-doContainer {
+    background-color: rgb(255, 255, 255); /* Change color back to rgb(255, 255, 255) */
+}
+
+.notebox {
+    background-color: rgb(255, 255, 255);
+}
