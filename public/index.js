@@ -3,7 +3,10 @@ let deleteButton = $('.delete');
 let container = $('.notesContainer')
 
 addButton.on('click', addNote);
-deleteButton.on('click', deleteNote);
+deleteButton.on('click', function() {
+    console.log('pls work');
+});
+
 getNotes()
 
 async function getNotes() {
@@ -28,15 +31,8 @@ async function addNote() {
     try {
         let titleInput = $(".titleInput").val()
         let textInput = $(".textInput").val()
-
-        console.log('titleInput:', titleInput);
-        console.log('textInput:', textInput);
-
         let requestBody = { title: titleInput, content: textInput}
-        console.log('request body: ', requestBody)
-        
         let newNote = await $.post('/notes', requestBody)
-
         getNotes()
     } catch (error) {
         console.error(error)
@@ -44,7 +40,11 @@ async function addNote() {
 }
 
 async function deleteNote() {
-    console.log('pls work')
+    try {
+        let deltedNote = await $.delete('/notes')
+    } catch (error) {
+        console.error(error)
+    }
 }
 
 

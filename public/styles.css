@@ -1,18 +1,20 @@
 body {
-    background-color: #fff9db;
+    background: linear-gradient(to right, #ff7818ac, #af002cb7);
 }
 
 .titleBar {
-    background-color: #ffd8a8;
+    background: linear-gradient(to right, #4a49489c, #977b82ab);
     height: 70px;
     border-radius: 10px;
     border: 2px solid black;
     text-align: center;
+    box-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
 
 .username {
     font-family: fantasy;
     font-size: 50px;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
 .page {
@@ -30,16 +32,14 @@ body {
 }
 
 .notesContainer {
-    background-color: rgb(255, 255, 255); /* Change color back to rgb(255, 255, 255) */
+    background-color: rgb(195, 243, 255);
     border: 2px solid black;
+    border-radius: 10px;
 }
 
-.to-doContainer {
-    background-color: rgb(255, 255, 255); /* Change color back to rgb(255, 255, 255) */
-}
 
 .notebox {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(195, 243, 255, 0.549);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,4 +62,12 @@ body {
     margin-top: 5px;
     height: 200px;
     width: 90%;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+.delete {
+    background-color: rgba(139, 27, 27, 0.571);
 }
