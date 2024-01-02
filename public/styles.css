@@ -17,9 +17,16 @@ body {
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
+.clear {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.644);
+    margin-top: 1%;
+    margin-left: 95%;
+}
+
 .page {
     height: 700px;
-    margin-top: 5%;
+    margin-top: 1%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;

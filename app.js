@@ -7,10 +7,11 @@ import bodyParser from 'body-parser';
 const { Pool } = pg;
 const app = express();
 
+// port
 const PORT = process.env.PORT;
 
-// deploying a database
-let dbURL = process.env.PG_DATABASE_URL; // might need to change
+// database
+let dbURL = process.env.PG_DATABASE_URL;
 
 let pool = new Pool ({
     connectionString: dbURL
@@ -71,6 +72,15 @@ app.delete('/notes/:note_id', async (req, res) => {
     }
 });
 
+app.delete('/notes', async (req, res) => {
+    try {
+        await pool.query('DELETE FROM notes;')
+        res.status(200).send('Cleared successfully')
+    } catch (error) {
+        console.error(error)
+        res.status(500).send('Clear failed')
+    }
+})
 
 
 

@@ -1,7 +1,9 @@
 let addButton = $('.add')
 let container = $('.notesContainer')
+let clearButton = $('.clear')
 
 addButton.on('click', addNote);
+clearButton.on('click', clear)
 
 getNotes()
 
@@ -51,6 +53,23 @@ async function addNote() {
         getNotes()
     } catch (error) {
         console.error(error)
+    }
+}
+
+async function clear() {
+    try {
+        await $.ajax({
+            url: '/notes',
+            type: 'DELETE',
+            success: function() {
+                container.empty()
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    } catch (error) {
+        console.error(error);
     }
 }
 
