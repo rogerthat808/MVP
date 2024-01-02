@@ -16,7 +16,7 @@ body {
     margin-left: 1%;
 }
 
-.title {
+.page_title {
     font-family: fantasy;
     font-size: 50px;
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
@@ -54,6 +54,7 @@ body {
     align-items: center;
     justify-content: center;
     justify-content: space-between;
+    gap: 100px
 }
 
 .addNote {
@@ -84,6 +85,7 @@ p {
 
 .bar {
     display: flex;
+    margin-top: -1%;
 }
 
 .noteText {

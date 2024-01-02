@@ -14,7 +14,7 @@ async function getNotes() {
         let notes = await $.get('/notes');
         notes.forEach(note => {
             let noteDiv = $('<div>').addClass('notebox');
-            let title = $('<h2>').text(note.title);
+            let title = $('<h4>').text(note.title);
             let content = $('<p>').text(note.content);
             let deleteBtn = $('<button>').text('Delete').attr('id', 'delete');
             
@@ -50,6 +50,9 @@ async function addNote() {
         let requestBody = { title: titleInput, content: textInput}
         let newNote = await $.post('/notes', requestBody)
         getNotes()
+
+        $(".titleInput").val('')
+        $(".textInput").val('')
     } catch (error) {
         console.error(error)
     }
