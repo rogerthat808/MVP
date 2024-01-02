@@ -57,7 +57,7 @@ app.delete('/notes/:note_id', async (req, res) => {
     try {
         const noteId = req.params.note_id;
         // Delete note by ID using SQL query
-        const deleteQuery = 'DELETE FROM notes WHERE id = $1';
+        const deleteQuery = 'DELETE FROM notes WHERE note_id = $1';
         const deleteResult = await pool.query(deleteQuery, [noteId]);
         
         if (deleteResult.rowCount === 0) {

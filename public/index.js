@@ -16,20 +16,20 @@ async function getNotes() {
             let content = $('<p>').text(note.content);
             let deleteBtn = $('<button>').text('Delete').attr('id', 'delete');
             
-            deleteBtn.on('click', async () => {  
+            deleteBtn.on('click', async () => {
                 try {
                     await $.ajax({
-                        url: `notes/${note_id}`,
+                        url: `/notes/${note.note_id}`,
                         type: 'DELETE',
                         success: function() {
-                            noteDiv.remove();
+                            noteDiv.remove()
                         },
                         error: function(err) {
-                            console.error('Error deleting the note', err);
+                            console.error('Error deleting the note', err)
                         }
-                    });
+                    })
                 } catch (err) {
-                    console.error(err);
+                    console.error(err)
                 }
             });
 
@@ -40,7 +40,6 @@ async function getNotes() {
         console.error(err);
     }
 }
-
 
 
 async function addNote() {
@@ -55,12 +54,5 @@ async function addNote() {
     }
 }
 
-async function deleteNote() {
-    try {
-        let deltedNote = await $.delete('/notes')
-    } catch (error) {
-        console.error(error)
-    }
-}
 
 
