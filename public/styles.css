@@ -11,7 +11,7 @@ body {
     box-shadow: 5px 5px 20px rgb(0, 0, 0);
 }
 
-.username {
+.title {
     font-family: fantasy;
     font-size: 50px;
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
@@ -25,13 +25,10 @@ body {
     gap: 10px;
 }
 
-.notesContainer,
-.to-doContainer {
-    flex: 1;
-    height: 100%;
-}
 
 .notesContainer {
+    flex: 1;
+    height: 100%;
     background-color: rgba(226, 226, 226);
     border: 2px solid black;
     border-radius: 10px;
