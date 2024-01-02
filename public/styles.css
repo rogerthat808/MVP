@@ -7,14 +7,20 @@ body {
     height: 70px;
     border-radius: 10px;
     border: 2px solid black;
-    text-align: center;
     box-shadow: 5px 5px 20px rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 1%;
 }
 
 .title {
     font-family: fantasy;
     font-size: 50px;
     text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    margin-left: 35%;
 }
 
 .clear {
@@ -26,7 +32,7 @@ body {
 
 .page {
     height: 700px;
-    margin-top: 1%;
+    margin-top: -1%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -74,4 +80,18 @@ p {
 
 #delete {
     background-color: rgba(139, 27, 27, 0.571);
+}
+
+.bar {
+    display: flex;
+}
+
+.noteText {
+    margin-left: 40%;
+    color: rgb(175, 177, 179);
+}
+
+.noteTitle {
+    margin-left: 2%;
+    color: rgb(175, 177, 179);
 }
