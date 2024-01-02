@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 const { Pool } = pg;
 const app = express();
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 
 // deploying a database
 let dbURL = process.env.PG_DATABASE_URL; // might need to change
