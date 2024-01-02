@@ -52,27 +52,24 @@ app.post('/notes', async (req, res) => {
     }
 })
 
-// delete route
-app.delete('/notes', async (req, res) => {
+
+app.delete('/notes/:note_id', async (req, res) => {
     try {
-        res.status(200).send('delete worked')
+        const noteId = req.params.note_id;
+        // Delete note by ID using SQL query
+        const deleteQuery = 'DELETE FROM notes WHERE id = $1';
+        const deleteResult = await pool.query(deleteQuery, [noteId]);
+        
+        if (deleteResult.rowCount === 0) {
+            return res.status(404).send('Note not found');
+        }
+
+        res.status(200).send('Note deleted successfully');
     } catch (err) {
-        console.error(err)
-        res.status(500).send('error!!')
+        console.error(err);
+        res.status(500).send('Error deleting note');
     }
-})
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 

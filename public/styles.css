@@ -32,14 +32,14 @@ body {
 }
 
 .notesContainer {
-    background-color: rgb(195, 243, 255);
+    background-color: rgba(226, 226, 226);
     border: 2px solid black;
     border-radius: 10px;
 }
 
 
 .notebox {
-    background-color: rgba(195, 243, 255, 0.549);
+    background-color: rgba(226, 226, 226, 0.549);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,6 +68,6 @@ p {
     font-family: sans-serif;
 }
 
-.delete {
+#delete {
     background-color: rgba(139, 27, 27, 0.571);
 }

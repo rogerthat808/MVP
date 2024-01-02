@@ -1,31 +1,47 @@
-let addButton = $('.add');
-let deleteButton = $('.delete');
+let addButton = $('.add')
 let container = $('.notesContainer')
 
 addButton.on('click', addNote);
-deleteButton.on('click', function() {
-    console.log('pls work');
-});
 
 getNotes()
 
+
 async function getNotes() {
     try {
-        container.empty()
+        container.empty();
         let notes = await $.get('/notes');
         notes.forEach(note => {
-            let noteDiv = $('<div>').addClass('notebox')
-            let title = $('<h2>').text(note.title)
+            let noteDiv = $('<div>').addClass('notebox');
+            let title = $('<h2>').text(note.title);
             let content = $('<p>').text(note.content);
-            let deleteBtn = $('<button>').text('Delete').addClass('delete')
+            let deleteBtn = $('<button>').text('Delete').attr('id', 'delete');
+            
+            deleteBtn.on('click', async () => {  
+                try {
+                    await $.ajax({
+                        url: `notes/${note_id}`,
+                        type: 'DELETE',
+                        success: function() {
+                            noteDiv.remove();
+                        },
+                        error: function(err) {
+                            console.error('Error deleting the note', err);
+                        }
+                    });
+                } catch (err) {
+                    console.error(err);
+                }
+            });
 
-            noteDiv.append(title, content, deleteBtn)
-            container.append(noteDiv)
+            noteDiv.append(title, content, deleteBtn);
+            container.append(noteDiv);
         });
     } catch (err) {
-        console.error(err)
+        console.error(err);
     }
 }
+
+
 
 async function addNote() {
     try {
@@ -46,6 +62,5 @@ async function deleteNote() {
         console.error(error)
     }
 }
-
 
 
