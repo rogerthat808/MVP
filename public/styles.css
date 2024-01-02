@@ -1,9 +1,9 @@
 body {
-    background: linear-gradient(to right, #6e360ed9, #59090ed8);
+    background: linear-gradient(to right, #39393bd9, #05072bd8);
 }
 
 .titleBar {
-    background: linear-gradient(to right, #4a49489c, #977b82ab);
+    background: linear-gradient(to right, #404a519c, #7b9297ab);
     height: 70px;
     border-radius: 10px;
     border: 2px solid black;

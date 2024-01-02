@@ -43,7 +43,6 @@ async function getNotes() {
     }
 }
 
-
 async function addNote() {
     try {
         let titleInput = $(".titleInput").val()
