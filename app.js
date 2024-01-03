@@ -28,7 +28,6 @@ app.get('/notes', async (req, res) => {
     try {
         let data = await pool.query('SELECT * FROM notes;');
         res.status(200).json(data.rows)
-        console.log(data.rows)
     } catch (err) {
         console.error(err)
         res.status(500).send('error!!')
@@ -38,13 +37,8 @@ app.get('/notes', async (req, res) => {
 // post route 
 app.post('/notes', async (req, res) => {
     try {
-        console.log('server sees this request body: ', req.body)
-
         let text = 'INSERT INTO notes (title, content) VALUES ($1, $2)';
         let values = [req.body.title, req.body.content];
-
-        console.log('There are the values: ', values)
-
         let result = await pool.query(text, values);
         res.status(200).json(result);
     } catch (err) {
@@ -53,18 +47,16 @@ app.post('/notes', async (req, res) => {
     }
 })
 
-
 app.delete('/notes/:note_id', async (req, res) => {
     try {
         const noteId = req.params.note_id;
-        // Delete note by ID using SQL query
         const deleteQuery = 'DELETE FROM notes WHERE note_id = $1';
         const deleteResult = await pool.query(deleteQuery, [noteId]);
         
         if (deleteResult.rowCount === 0) {
             return res.status(404).send('Note not found');
         }
-
+        
         res.status(200).send('Note deleted successfully');
     } catch (err) {
         console.error(err);
@@ -82,10 +74,7 @@ app.delete('/notes', async (req, res) => {
     }
 })
 
-
-
 // Server listening 
-
 function logger(req, res, next) {
     console.log("Request method: ", req.method);
     console.log("Request path:", req.url);
